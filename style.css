@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Prompt', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  background-color: black;
+  background-image:
+    radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
+    radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+/*+++++++   Loader   +++++++*/
+.loader {
+  background: #ffff;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ++++++++  Navigation   ++++++++*/
+.navigation-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+
+.navigation-items {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 13%;
+}
+
+
+.navigation-items h3 {
+  padding: 0 5%;
+}
+
+
+.navigation-items .logo {
+  width: 100%;
+  position: relative;
+  top: -50px;
+}
+
+.navigation-items .logo img {
+  padding-left: 55px;
+  width: 170px;
+
+}
+
+.navigation-items .clickable-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.background {
+  background: rgb(234, 234, 234);
+  position: fixed;
+  right: 0;
+  width: 100%;
+  height: 70px;
+  z-index: -1;
+}
+
+.clickable {
+  color: rgb(255, 118, 39);
+  cursor: pointer;
+  user-select: none;
+  transition: all ease 0.3s;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.clickable:hover {
+  color: rgb(255, 201, 39);
+}
+
+/* +++++++  Images Container   +++++++*/
+.images-container {
+  width: 1300px;
+  margin-top: 60px;
+}
+
+.card {
+  background: white;
+  margin: 10px 10px 20px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: 1.5px solid #ffff;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 90vh;
+  border-radius: 3px 3px 0 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body p {
+  text-align: justify;
+}
+
+.card-body h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.card-title {
+  margin: 10px auto;
+  text-align: center;
+  font-size: 28px;
+}
+
+/* +++++++++ Save Confirmation  +++++++++*/
+.save-confirmed,
+.remove-confirmed {
+  background: white;
+  padding: 5px 14px;
+  border-radius: 3px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  position: fixed;
+  bottom: 25px;
+  right: 50px;
+}
+
+.save-confirmed h1,
+.remove-confirmed h1 {
+  color: rgb(37, 200, 37);
+  margin: 10px;
+  font-size: 1.6rem;
+}
+
+strong {
+  color: rgb(38, 38, 251);
+  font-style: italic;
+}
+
+/*+++++++  Hidden +++++ */
+.hidden {
+  display: none;
+}
+
+/* +++++++   Media query  1024px  +++++++++ */
+@media screen and (max-width: 1024px) {
+  .images-container {
+    width: 95%;
+  }
+
+  .navigation-items {
+    padding: 0;
+  }
+
+  .navigation-items .clickable-header {
+    padding-right: 50px;
+  }
+
+  .card-img-top {
+    height: 75vh;
+  }
+}
+
+
+/* +++++++   Media query  850px  +++++++++ */
+@media screen and (max-width: 850px) {
+  body {
+    line-height: 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .navigation-items .logo {
+    top: -38px;
+  }
+
+  .navigation-items .logo img {
+    padding-left: 72px;
+    width: 140px;
+  }
+
+  .navigation-items h3 {
+    margin-top: 35px;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  .clickable {
+    font-size: 1.2rem;
+  }
+
+  .save-confirmed h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* +++++++   Media query  670px  +++++++++ */
+@media screen and (max-width: 670px) {
+  .background {
+    height: 90px;
+  }
+
+
+  .navigation-items .logo {
+    top: -40px;
+    text-align: center;
+    height: 0;
+  }
+
+  .navigation-items .logo img {
+    width: 124px;
+    padding: 0;
+  }
+
+  .navigation-items h3 {
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .navigation-items .clickable-header {
+    position: absolute;
+    top: 40px;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .images-container {
+    margin-top: 90px;
+  }
+
+  .card-img-top {
+    height: 50vh;
+  }
+
+}
+
+/* +++++++   Media query  400px  +++++++++ */
+@media screen and (max-width: 400px) {
+
+  .navigation-items h3 {
+    font-size: 1.2rem;
+
+  }
+
+}
